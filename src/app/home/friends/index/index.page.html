@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Week10/Index</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/create">CREATE</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let friends of friends">
+      <ion-label>{{friends.email}} - {{friends.nama}}</ion-label>
+      <ion-button routerLink="/{{friends.key}}">EDIT</ion-button>
+      <ion-button (click)="delete($event, friends.key)">DELETE</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
